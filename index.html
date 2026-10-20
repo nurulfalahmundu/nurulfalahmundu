@@ -347,33 +347,36 @@ footer a:hover{color:#fff;text-decoration:underline}
     <div class="hak">
       <div class="pengunjung" id="pengunjung" hidden>
         <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-        <span>Total pengunjung: <b id="jumlah">0</b></span>
+        <span>Total kunjungan: <b id="jumlah">0</b></span>
       </div>
       <div>© 2026 Nurul Falah Mundu. Semua hak dilindungi.</div>
     </div>
   </div>
 </footer>
 
-<!-- ===== PENGHITUNG PENGUNJUNG =====
-Memakai layanan gratis counterapi.dev. Satu pengunjung dihitung sekali per sesi browser (refresh tidak menambah).
-Jika layanan tidak bisa dihubungi, kotak penghitung otomatis disembunyikan.
-Ganti "nurulfalahmundu" dan "kunjungan" bila ingin memulai hitungan dari nol. -->
+<!-- ===== PENGHITUNG KUNJUNGAN (GoatCounter) =====
+LANGKAH: daftar gratis di goatcounter.com, pilih kode situs (misalnya "nurulfalah"),
+lalu tulis kode itu di baris  var kode = "..."  di bawah ini.
+Di GoatCounter: Settings > centang "Allow adding visitor counts on your website".
+Selama kode belum diisi, kotak penghitung disembunyikan. -->
 <script>
 (function(){
+  var kode="ISI_KODE_DI_SINI";
   var kotak=document.getElementById("pengunjung"),angka=document.getElementById("jumlah");
-  if(!kotak||!angka||!window.fetch)return;
-  var dasar="https://api.counterapi.dev/v1/nurulfalahmundu/kunjungan/";
-  var sudah=false;
-  try{sudah=sessionStorage.getItem("nfm_dihitung")==="1"}catch(e){}
-  fetch(dasar+(sudah?"get":"up"))
-    .then(function(r){if(!r.ok)throw new Error("gagal");return r.json()})
-    .then(function(d){
-      if(typeof d.count!=="number")return;
-      angka.textContent=d.count.toLocaleString("id-ID");
-      kotak.hidden=false;
-      try{sessionStorage.setItem("nfm_dihitung","1")}catch(e){}
-    })
-    .catch(function(){});
+  if(!kotak||!angka||!window.fetch||!kode||kode.indexOf("ISI_")===0)return;
+  var dasar="https://"+kode+".goatcounter.com/";
+  var s=document.createElement("script");
+  s.async=true;
+  s.setAttribute("data-goatcounter",dasar+"count");
+  s.src="https://gc.zgo.at/count.js";
+  document.head.appendChild(s);
+  function tampil(){
+    fetch(dasar+"counter/TOTAL.json")
+      .then(function(r){if(!r.ok)throw new Error("gagal");return r.json()})
+      .then(function(d){if(d&&d.count!==undefined){angka.textContent=d.count;kotak.hidden=false}})
+      .catch(function(){});
+  }
+  setTimeout(tampil,1500);
 })();
 </script>
 
