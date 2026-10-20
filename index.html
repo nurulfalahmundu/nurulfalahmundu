@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nurul Falah Mundu – Madrasah Ibtidaiyah</title>
+<meta name="description" content="Website resmi Nurul Falah Mundu: profil, program, berita, dan informasi pendaftaran siswa baru.">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== PENGATURAN WARNA: ubah di sini untuk mengganti tema ===== */
+:root{
+  --hijau:#14573d;
+  --hijau-tua:#0b3b29;
+  --emas:#c9962a;
+  --emas-muda:#f3e4bd;
+  --mint:#f3f8f5;
+  --teks:#142219;
+  --samar:#5a6d62;
+  --garis:#dbe7e0;
+  --bayang:0 10px 30px rgba(11,59,41,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:"Nunito",system-ui,"Segoe UI",sans-serif;color:var(--teks);background:#fff;line-height:1.7}
+a{color:var(--hijau)}
+a:focus-visible{outline:3px solid var(--emas);outline-offset:3px}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Merriweather",Georgia,serif;line-height:1.25}
+
+/* ===== Navigasi ===== */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--garis)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}
+.merek{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--hijau-tua);font-family:"Merriweather",Georgia,serif;font-weight:900;white-space:nowrap}
+.merek img{width:42px;height:42px;object-fit:contain}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;overflow-x:auto}
+.nav li a{display:block;padding:8px 12px;color:var(--teks);text-decoration:none;font-weight:600;border-radius:8px;white-space:nowrap;font-size:.95rem}
+.nav li a:hover{background:var(--mint);color:var(--hijau)}
+.nav .cta{background:var(--hijau);color:#fff;padding:10px 18px;border-radius:999px;font-weight:800;text-decoration:none;white-space:nowrap;font-size:.95rem}
+.nav .cta:hover{background:var(--hijau-tua)}
+
+/* ===== Hero ===== */
+.hero{position:relative;color:#fff;padding:96px 0 130px;
+  background:
+    linear-gradient(100deg,rgba(11,59,41,.94) 0%,rgba(11,59,41,.78) 55%,rgba(11,59,41,.45) 100%),
+    url("https://i.ibb.co.com/84Dn9dqC/Gemini-Generated-Image-u5gijku5gijku5gi.jpg") center/cover,
+    var(--hijau-tua)}
+.hero .lencana{display:inline-block;border:1px solid rgba(255,255,255,.4);padding:5px 14px;border-radius:999px;font-size:.85rem;font-weight:600;letter-spacing:.03em;margin-bottom:18px;background:rgba(255,255,255,.08)}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:900;margin:0 0 14px;max-width:700px}
+.hero p{max-width:560px;font-size:1.15rem;margin:0 0 30px;color:#e6f1ea}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.emas{background:var(--emas);color:#241800}
+.btn.garis{border:2px solid rgba(255,255,255,.75);color:#fff;margin-left:8px}
+
+/* ===== Strip angka ===== */
+.angka{position:relative;margin-top:-62px;z-index:2}
+.angka .grid4{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:14px;box-shadow:var(--bayang);border:1px solid var(--garis);overflow:hidden}
+.angka .item{padding:22px 16px;text-align:center;border-right:1px solid var(--garis)}
+.angka .item:last-child{border-right:0}
+.angka b{display:block;font-family:"Merriweather",Georgia,serif;font-size:1.9rem;color:var(--hijau)}
+.angka span{color:var(--samar);font-size:.9rem}
+
+/* ===== Section ===== */
+section{padding:84px 0}
+section.mint{background:var(--mint)}
+.judul{margin-bottom:34px;max-width:640px}
+.judul .label{display:block;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--emas);margin-bottom:8px}
+.judul h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 12px;color:var(--hijau-tua);position:relative;padding-bottom:14px}
+.judul h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:2px;background:var(--emas)}
+.judul p{margin:0;color:var(--samar)}
+.dua{display:grid;gap:36px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+.panel{background:#fff;border:1px solid var(--garis);border-radius:14px;padding:26px;box-shadow:var(--bayang)}
+.panel h3{margin:0 0 8px;font-size:1.1rem;color:var(--hijau)}
+.panel h3:not(:first-child){margin-top:22px}
+.panel p{margin:0}
+ul.misi{padding-left:0;margin:0;list-style:none}
+ul.misi li{position:relative;padding-left:26px;margin-bottom:8px}
+ul.misi li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:12px;border-radius:50%;background:var(--emas-muda);border:3px solid var(--emas)}
+
+/* ===== Program ===== */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.kartu{background:#fff;border:1px solid var(--garis);border-radius:14px;padding:26px;transition:transform .2s,box-shadow .2s;border-top:4px solid var(--emas)}
+.kartu:hover{transform:translateY(-4px);box-shadow:var(--bayang)}
+.kartu .ikon{width:48px;height:48px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.kartu .ikon svg{width:26px;height:26px;stroke:var(--hijau);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kartu h3{margin:0 0 6px;font-size:1.1rem}
+.kartu p{margin:0;color:var(--samar)}
+
+/* ===== Berita ===== */
+.kosong{display:flex;gap:18px;align-items:center;background:var(--mint);border:1px dashed var(--garis);border-radius:14px;padding:26px}
+.kosong svg{flex:none;width:44px;height:44px;stroke:var(--emas);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.kosong p{margin:0;color:var(--samar)}
+.berita{background:#fff;border:1px solid var(--garis);border-left:5px solid var(--emas);border-radius:10px;padding:16px 20px;margin-bottom:14px}
+.berita time{font-size:.85rem;color:var(--samar)}
+.berita h3{margin:2px 0 4px;font-size:1.1rem}
+.berita p{margin:0}
+
+/* ===== Galeri ===== */
+.galeri{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.foto{aspect-ratio:4/3;border-radius:12px;overflow:hidden;box-shadow:var(--bayang);background:var(--mint)}
+.foto img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.foto:hover img{transform:scale(1.06)}
+
+/* ===== Pendaftaran ===== */
+.ppdb{background:linear-gradient(160deg,var(--hijau-tua),var(--hijau));color:#fff}
+.ppdb .judul h2{color:#fff}
+.ppdb .judul p{color:#cfe4d8}
+.ppdb .kartu{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);border-top-color:var(--emas)}
+.ppdb .kartu p{color:#e3f0e8}
+.ppdb .kartu:hover{box-shadow:none}
+
+/* ===== Kontak ===== */
+.kontak{display:grid;gap:18px}
+.kontak div{display:flex;gap:14px}
+.kontak .ikon{flex:none;width:42px;height:42px;border-radius:10px;background:var(--mint);display:flex;align-items:center;justify-content:center}
+.kontak svg{width:22px;height:22px;stroke:var(--hijau);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kontak b{display:block;font-size:.85rem;color:var(--samar);font-weight:600}
+.kontak span.isi{font-weight:600;overflow-wrap:anywhere}
+.peta{border-radius:14px;overflow:hidden;border:1px solid var(--garis);box-shadow:var(--bayang)}
+.peta iframe{display:block;width:100%;height:340px;border:0}
+
+/* ===== Footer ===== */
+footer{background:var(--hijau-tua);color:#cfe4d8;padding:54px 0 0;font-size:.95rem}
+.kaki{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding-bottom:36px}
+footer h3{color:#fff;font-size:1rem;margin:0 0 12px}
+footer p{margin:0}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:6px}
+footer a{color:#cfe4d8;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.hak{border-top:1px solid rgba(255,255,255,.15);padding:16px 0;text-align:center;font-size:.85rem}
+
+@media (max-width:760px){
+  section{padding:60px 0}
+  .hero{padding:64px 0 110px}
+  .angka .grid4{grid-template-columns:repeat(2,1fr)}
+  .angka .item:nth-child(2){border-right:0}
+  .angka .item:nth-child(-n+2){border-bottom:1px solid var(--garis)}
+  .nav .cta,.merek span{display:none}
+  .btn.garis{margin:10px 0 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGASI ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="merek" href="#beranda"><img src="https://i.ibb.co.com/81Pbh4M/Logo-PNG.png" alt="Logo Nurul Falah Mundu"><span>Nurul Falah Mundu</span></a>
+    <nav aria-label="Menu utama">
+      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#berita">Berita</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#ppdb">Pendaftaran</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <a class="cta" href="#ppdb">Daftar sekarang</a>
+  </div>
+</header>
+
+<main>
+<!-- ===== BERANDA ===== -->
+<div class="hero" id="beranda">
+  <div class="wrap">
+    <span class="lencana">Cigalontang, Tasikmalaya</span>
+    <h1>Nurul Falah Mundu</h1>
+    <p>Membentuk Generasi Qur’ani, Berakhlak Mulia dan Berprestasi.</p>
+    <a class="btn emas" href="#ppdb">Daftar siswa baru</a>
+    <a class="btn garis" href="#profil">Kenali madrasah kami</a>
+  </div>
+</div>
+
+<div class="angka">
+  <div class="wrap">
+    <div class="grid4">
+      <div class="item"><b>2018</b><span>Tahun berdiri</span></div>
+      <div class="item"><b>34</b><span>Siswa aktif</span></div>
+      <div class="item"><b>4</b><span>Guru dan tenaga pendidik</span></div>
+      <div class="item"><b>4–12</b><span>Rentang usia siswa</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROFIL ===== -->
+<section id="profil">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Tentang kami</span>
+      <h2>Profil madrasah</h2>
+    </div>
+    <div class="dua">
+      <div>
+        <p>Nurul Falah Mundu berdiri sejak tahun 2018 di KP Mundu RT 011 RW 004 Desa Lengkongjaya Kecamatan Cigalontang Kabupaten Tasikmalaya.</p>
+        <p>Kami mendidik anak usia 4–12 tahun dengan perpaduan kurikulum nasional dan pendidikan agama Islam, dalam suasana belajar yang ramah dan aman.</p>
+      </div>
+      <div class="panel">
+        <h3>Visi</h3>
+        <p>Terwujudnya generasi yang beriman, berilmu, dan berakhlakul karimah.</p>
+        <h3>Misi</h3>
+        <ul class="misi">
+          <li>Menanamkan akidah dan ibadah sejak dini.</li>
+          <li>Membiasakan tahfiz dan membaca Al-Qur’an.</li>
+          <li>Mengembangkan prestasi akademik dan non-akademik.</li>
+          <li>Membangun budi pekerti dan kebersihan lingkungan.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAM ===== -->
+<section id="program" class="mint">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Yang kami ajarkan</span>
+      <h2>Program unggulan</h2>
+    </div>
+    <div class="grid">
+      <div class="kartu">
+        <div class="ikon"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 8h6"/></svg></div>
+        <h3>Tahfiz dan tilawah</h3><p>Setoran hafalan juz 30 dan bimbingan baca Al-Qur’an setiap hari.</p>
+      </div>
+      <div class="kartu">
+        <div class="ikon"><svg viewBox="0 0 24 24"><path d="M12 3l7 6v11H5V9z"/><path d="M10 20v-5a2 2 0 0 1 4 0v5"/></svg></div>
+        <h3>Ibadah harian</h3><p>Salat Duha dan Zuhur berjamaah, doa harian, dan praktik wudu.</p>
+      </div>
+      <div class="kartu">
+        <div class="ikon"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5-9 5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div>
+        <h3>Kurikulum nasional</h3><p>Pelajaran umum dan pendidikan agama dalam satu jadwal yang seimbang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BERITA ===== -->
+<!-- Cara menambah berita: salin blok <article> di bawah, hapus tanda komentarnya, taruh di atas bagian "kosong", lalu ubah isinya.
+<article class="berita">
+  <time datetime="2026-10-20">20 Oktober 2026</time>
+  <h3>Judul berita</h3>
+  <p>Ringkasan berita dua atau tiga kalimat.</p>
+</article>
+-->
+<section id="berita">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Kabar terbaru</span>
+      <h2>Berita dan pengumuman</h2>
+    </div>
+    <div class="kosong">
+      <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+      <p>Belum ada pengumuman baru. Untuk informasi terbaru, silakan hubungi kami lewat WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERI ===== -->
+<section id="galeri" class="mint">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Dokumentasi</span>
+      <h2>Galeri kegiatan</h2>
+      <p>Suasana belajar dan kegiatan keagamaan di Nurul Falah Mundu.</p>
+    </div>
+    <div class="galeri">
+      <div class="foto"><img src="https://i.ibb.co.com/84Dn9dqC/Gemini-Generated-Image-u5gijku5gijku5gi.jpg" alt="Gedung Nurul Falah Mundu" loading="lazy"></div>
+      <div class="foto"><img src="https://i.ibb.co.com/Fkfhcb1v/Gemini-Generated-Image-8n50fn8n50fn8n50.jpg" alt="Siswa belajar di dalam kelas" loading="lazy"></div>
+      <div class="foto"><img src="https://i.ibb.co.com/H0cRvJ2/Gemini-Generated-Image-fbx837fbx837fbx8.jpg" alt="Guru mengajar siswa di depan papan tulis" loading="lazy"></div>
+      <div class="foto"><img src="https://i.ibb.co.com/20tST5pk/Gemini-Generated-Image-n9eeocn9eeocn9ee.jpg" alt="Siswa membaca Al-Qur’an bersama" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PENDAFTARAN ===== -->
+<section id="ppdb" class="ppdb">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Bergabunglah</span>
+      <h2>Pendaftaran siswa baru</h2>
+      <p>Tahun ajaran 2026/2027. Pendaftaran dibuka sepanjang tahun.</p>
+    </div>
+    <div class="grid">
+      <div class="kartu"><h3>Syarat</h3><p>Usia minimal 4 tahun, fotokopi akta kelahiran dan kartu keluarga, pas foto 3×4.</p></div>
+      <div class="kartu"><h3>Cara daftar</h3><p>Datang ke madrasah atau hubungi panitia lewat WhatsApp.</p></div>
+      <div class="kartu"><h3>Biaya</h3><p>Hubungi panitia untuk informasi biaya pendaftaran.</p></div>
+    </div>
+    <p style="margin:30px 0 0"><a class="btn emas" href="https://wa.me/6282318774691" target="_blank" rel="noopener">Hubungi panitia via WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- ===== KONTAK ===== -->
+<section id="kontak">
+  <div class="wrap">
+    <div class="judul">
+      <span class="label">Hubungi kami</span>
+      <h2>Kontak dan lokasi</h2>
+    </div>
+    <div class="dua">
+      <div class="kontak">
+        <div><span class="ikon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><p style="margin:0"><b>Alamat</b><span class="isi">KP Mundu RT 011 RW 004 Desa Lengkongjaya Kecamatan Cigalontang Kabupaten Tasikmalaya Provinsi Jawa Barat</span></p></div>
+        <div><span class="ikon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><p style="margin:0"><b>Telepon / WhatsApp</b><span class="isi">0823 1877 4691</span></p></div>
+        <div><span class="ikon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><p style="margin:0"><b>Email</b><span class="isi">mdtanurulfalahmundu@gmail.com</span></p></div>
+        <div><span class="ikon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><p style="margin:0"><b>Jam layanan</b><span class="isi">Senin–Sabtu, 07.00–13.00</span></p></div>
+      </div>
+      <div>
+        <div class="peta">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d989.2535251903932!2d108.04004366966537!3d-7.3523121694627225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjEnMDguMyJTIDEwOMKwMDInMjYuNSJF!5e0!3m2!1sid!2sid!4v1792486838617!5m2!1sid!2sid" title="Lokasi Nurul Falah Mundu" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p style="margin:14px 0 0"><a class="btn emas" href="https://maps.app.goo.gl/rbq2fktW5gvcYbjC7" target="_blank" rel="noopener">Buka rute di Google Maps</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="kaki">
+      <div>
+        <h3>Nurul Falah Mundu</h3>
+        <p>Membentuk Generasi Qur’ani, Berakhlak Mulia dan Berprestasi.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#ppdb">Pendaftaran</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <p>KP Mundu, Desa Lengkongjaya, Kec. Cigalontang, Kab. Tasikmalaya</p>
+        <p>WhatsApp 0823 1877 4691</p>
+      </div>
+    </div>
+    <div class="hak">© 2026 Nurul Falah Mundu. Semua hak dilindungi.</div>
+  </div>
+</footer>
+
+</body>
+</html>
