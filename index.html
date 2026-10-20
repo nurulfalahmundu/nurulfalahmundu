@@ -131,6 +131,10 @@ footer a{color:#cfe4d8;text-decoration:none}
 footer a:hover{color:#fff;text-decoration:underline}
 .hak{border-top:1px solid rgba(255,255,255,.15);padding:16px 0;text-align:center;font-size:.85rem}
 
+.pengunjung{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;padding:6px 16px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);font-weight:600;color:#fff}
+.pengunjung svg{width:18px;height:18px;stroke:var(--emas);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pengunjung[hidden]{display:none}
+
 @media (max-width:760px){
   section{padding:60px 0}
   .hero{padding:64px 0 110px}
@@ -340,9 +344,38 @@ footer a:hover{color:#fff;text-decoration:underline}
         <p>WhatsApp 0823 1877 4691</p>
       </div>
     </div>
-    <div class="hak">© 2026 Nurul Falah Mundu. Semua hak dilindungi.</div>
+    <div class="hak">
+      <div class="pengunjung" id="pengunjung" hidden>
+        <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>Total pengunjung: <b id="jumlah">0</b></span>
+      </div>
+      <div>© 2026 Nurul Falah Mundu. Semua hak dilindungi.</div>
+    </div>
   </div>
 </footer>
+
+<!-- ===== PENGHITUNG PENGUNJUNG =====
+Memakai layanan gratis counterapi.dev. Satu pengunjung dihitung sekali per sesi browser (refresh tidak menambah).
+Jika layanan tidak bisa dihubungi, kotak penghitung otomatis disembunyikan.
+Ganti "nurulfalahmundu" dan "kunjungan" bila ingin memulai hitungan dari nol. -->
+<script>
+(function(){
+  var kotak=document.getElementById("pengunjung"),angka=document.getElementById("jumlah");
+  if(!kotak||!angka||!window.fetch)return;
+  var dasar="https://api.counterapi.dev/v1/nurulfalahmundu/kunjungan/";
+  var sudah=false;
+  try{sudah=sessionStorage.getItem("nfm_dihitung")==="1"}catch(e){}
+  fetch(dasar+(sudah?"get":"up"))
+    .then(function(r){if(!r.ok)throw new Error("gagal");return r.json()})
+    .then(function(d){
+      if(typeof d.count!=="number")return;
+      angka.textContent=d.count.toLocaleString("id-ID");
+      kotak.hidden=false;
+      try{sessionStorage.setItem("nfm_dihitung","1")}catch(e){}
+    })
+    .catch(function(){});
+})();
+</script>
 
 </body>
 </html>
